@@ -99,6 +99,33 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     public void checkCollisions() {
+        // Check if head collides with body
+        for(int i = bodyParts; i > 0; i--){
+            if((x[0] == x[i]) && (y[0] == y[i])){
+                running = false;
+            }
+        }
+        // Check if head touches left border
+        if(x[0] < 0){
+            running = false;
+        }
+        // Check if head touches right border
+        if(x[0] > SCREEN_WIDTH){
+            running = false;
+        }
+        // Check if head touches top border
+        if(y[0] < 0){
+            running = false;
+        }
+        // Check if head touches body bottomm border
+        if(y[0] > SCREEN_HEIGHT){
+            running = false;
+        }
+
+        if(!running){
+            timer.stop();
+        }
+
 
     }
 
@@ -110,13 +137,39 @@ public class GamePanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if(running){
+            move();
+            checkApple();
+            checkCollisions();
+        }
+        repaint();
     }
 
     public class MyKeyAdapter extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e){
-
+            switch(e.getKeyCode()){
+                case KeyEvent.VK_LEFT:
+                    if(direction != 'R'){
+                        direction = 'L';
+                    }
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    if(direction != 'L'){
+                        direction = 'R';
+                    }
+                    break;
+                case KeyEvent.VK_UP:
+                    if(direction != 'D'){
+                        direction = 'U';
+                    }
+                    break;
+                case KeyEvent.VK_DOWN:
+                    if(direction != 'U'){
+                        direction = 'D';
+                    }
+                    break;
+            }
         }
     }
 
