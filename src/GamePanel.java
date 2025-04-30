@@ -146,6 +146,7 @@ public class GamePanel extends JPanel implements ActionListener {
     }
 
     public class MyKeyAdapter extends KeyAdapter {
+        // Handles player control
         @Override
         public void keyPressed(KeyEvent e){
             switch(e.getKeyCode()){
