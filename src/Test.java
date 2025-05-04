@@ -4,5 +4,6 @@ public class Test {
         System.out.println("IGNORE--test");
     }
     // Just testing again
-    // IGNORE--test: checking Git GitHub sync
+    // IGNORE--test: checking Git and GitHub sync
+    // IGNORE--test: changing name and email for Git and GitHub sync
 }
