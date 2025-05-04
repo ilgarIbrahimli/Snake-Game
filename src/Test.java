@@ -4,4 +4,5 @@ public class Test {
         System.out.println("IGNORE--test");
     }
     // Just testing again
+    // IGNORE--test: checking Git GitHub sync
 }
