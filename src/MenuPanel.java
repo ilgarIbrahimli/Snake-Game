@@ -34,17 +34,17 @@ public class MenuPanel extends JPanel {
         Graphics2D g2d = getGraphics2D((Graphics2D) g);
 
         FontMetrics metrics = g.getFontMetrics();
-        String playText = "Play";
+        String playText = "PLAY";
         int textX = (GamePanel.SCREEN_WIDTH - metrics.stringWidth(playText)) / 2;
-        int textY = GamePanel.SCREEN_HEIGHT / 2 + 10;
+        int textY = GamePanel.SCREEN_HEIGHT / 2 + 5;
 
         g2d.drawString(playText, textX, textY);
     }
 
     private static Graphics2D getGraphics2D(Graphics2D g) {
-        Graphics2D g2d = g;
+        Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.BLACK);
-        g2d.setStroke(new BasicStroke(3));
+        g2d.setStroke(new BasicStroke(5));
         g2d.drawRoundRect(GamePanel.SCREEN_WIDTH / 2 - 100, GamePanel.SCREEN_HEIGHT / 2 - 50, 200, 80, 30, 30); // Draw rounded rectangle border
 
 
